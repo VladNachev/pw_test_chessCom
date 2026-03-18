@@ -15,4 +15,8 @@ export class HomePage {
   async expectTitle(): Promise<void> {
     await expect(this.page).toHaveTitle(this.expectedTitlePattern);
   }
+
+  async clickSignUp(): Promise<void> {
+    await this.page.getByRole('link', { name: /sign up/i }).first().click();
+  }
 }
