@@ -1,13 +1,16 @@
 import { test } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
+import { PlayPage } from '../pages/PlayPage';
 import { SignUpPage } from '../pages/SignUpPage';
 
 test.describe('Chess.com home page', () => {
   let homePage: HomePage;
+  let playPage: PlayPage;
   let signUpPage: SignUpPage;
 
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
+    playPage = new PlayPage(page);
     signUpPage = new SignUpPage(page);
     await homePage.goto();
   });
@@ -20,5 +23,14 @@ test.describe('Chess.com home page', () => {
     await homePage.clickSignUp();
 
     await signUpPage.expectSignUpFormLoaded();
+  });
+
+  test('main CTA buttons are visible', async () => {
+    await homePage.expectMainCtasVisible();
+  });
+
+  test('clicking on Play redirects to the Play page', async () => {
+    await homePage.clickPlay();
+    await playPage.expectUrlAndTitleLoaded();
   });
 });
