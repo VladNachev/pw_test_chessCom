@@ -10,7 +10,7 @@ export class LoginPage {
     this.page = page;
   }
 
-  async expectLoaded(): Promise<void> {
+  async expectLoginFormLoaded(): Promise<void> {
     await expect(this.page).toHaveTitle(this.title);
     await expect(this.page).toHaveURL(this.pathPattern);
     await expect(this.page.locator('#login-username')).toBeVisible();

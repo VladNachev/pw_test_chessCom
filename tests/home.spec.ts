@@ -40,7 +40,7 @@ test.describe('Chess.com home page', () => {
 
   test('logging in with incorrect credentials shows an incorrect password message', async () => {
     await homePage.clickLogIn();
-    await loginPage.expectLoaded();
+    await loginPage.expectLoginFormLoaded();
 
     await loginPage.login(invalidLoginData.email, invalidLoginData.password);
 
