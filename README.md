@@ -21,7 +21,7 @@ npm test
 
 - `pages/` page object models for Chess.com pages and flows
 - `tests/` Playwright spec files grouped by feature/page
-- `test-data/` reusable expected values, paths, titles, and labels
+- `test-data/` reusable test inputs such as dummy credentials
 - `utils/` shared helpers such as URL builders and consent handling
 - `playwright.config.ts` shared Playwright runtime configuration
 - `tsconfig.json` TypeScript project configuration
