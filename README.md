@@ -3,6 +3,8 @@
 ## Requirements
 
 - Node.js 22+
+- Playwright
+- TypeScript
 
 ## Install
 
